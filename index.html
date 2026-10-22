@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aarna Pandey | Supply Chain and Finance</title>
+<meta name="description" content="Portfolio of Aarna Pandey, Supply Chain Management and Finance student at the Gies College of Business, University of Illinois Urbana-Champaign.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3F5F4;
+    --ink: #1C2B30;
+    --ink-soft: #4A5A5F;
+    --blue: #2756C7;
+    --blue-ink: #FFFFFF;
+    --green: #2E6A4E;
+    --rule: #C9D1CF;
+    --surface: #FFFFFF;
+    --gutter: clamp(16px, 5vw, 64px);
+    --max: 1120px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #142024;
+      --ink: #E6ECEA;
+      --ink-soft: #A7B5B3;
+      --green: #6FBF95;
+      --rule: #2F4046;
+      --surface: #1A292E;
+      --blue: #7FA4FF;
+      --blue-ink: #10203F;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Archivo", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+  /* Top bar */
+  .bar { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 22px 0; flex-wrap: wrap; }
+  .bar .mark { font-weight: 800; font-stretch: 112%; letter-spacing: -0.01em; text-decoration: none; }
+  .bar nav { display: flex; gap: 22px; flex-wrap: wrap; }
+  .bar nav a { text-decoration: none; color: var(--ink-soft); font-size: 15px; }
+  .bar nav a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+
+  /* Hero */
+  .hero { padding: clamp(40px, 9vw, 110px) 0 clamp(36px, 6vw, 72px); }
+  .hero h1 {
+    font-weight: 850;
+    font-stretch: 125%;
+    font-size: clamp(44px, 9.5vw, 128px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+  }
+  .hero p.lede { margin-top: 28px; max-width: 34em; font-size: clamp(18px, 2.1vw, 22px); color: var(--ink-soft); }
+  .hero .actions { margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 13px 22px; font-weight: 650; font-size: 16px; text-decoration: none;
+    border: 2px solid var(--ink); border-radius: 3px;
+  }
+  .btn.primary { background: var(--blue); border-color: var(--blue); color: var(--blue-ink); }
+  .btn:hover { transform: translateY(-1px); }
+
+  /* Route lane */
+  .lane { margin-top: clamp(48px, 8vw, 88px); position: relative; }
+  .lane ol { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); position: relative; }
+  .lane ol::before {
+    content: ""; position: absolute; left: 7px; right: calc(20% - 9px); top: 7px; height: 4px;
+    background: repeating-linear-gradient(90deg, var(--ink) 0 18px, transparent 18px 28px);
+    transform-origin: left; animation: draw 1.6s cubic-bezier(.6,0,.2,1) .2s both;
+  }
+  .lane li { position: relative; padding-top: 34px; padding-right: 12px; }
+  .lane li::before {
+    content: ""; position: absolute; top: 0; left: 0; width: 18px; height: 18px; border-radius: 50%;
+    background: var(--paper); border: 4px solid var(--ink);
+  }
+  .lane li:last-child::before { background: var(--blue); border-color: var(--blue); width: 22px; height: 22px; top: -2px; }
+  .lane .place { font-weight: 750; font-stretch: 110%; font-size: clamp(16px, 1.8vw, 20px); }
+  .lane .note { color: var(--ink-soft); font-size: 14.5px; margin-top: 4px; max-width: 18em; }
+  @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+  @media (max-width: 720px) {
+    .lane ol { grid-template-columns: 1fr; gap: 22px; padding-left: 36px; }
+    .lane ol::before {
+      left: 7px; right: auto; top: 6px; bottom: 6px; width: 4px; height: auto;
+      background: repeating-linear-gradient(180deg, var(--ink) 0 18px, transparent 18px 28px);
+      transform-origin: top; animation-name: drawv;
+    }
+    .lane li { padding-top: 0; }
+    .lane li::before { left: -36px; top: 2px; }
+    .lane li:last-child::before { top: 0; left: -38px; }
+  }
+  @keyframes drawv { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+  /* Sections */
+  section.block { padding: clamp(56px, 8vw, 96px) 0; border-top: 2px solid var(--ink); }
+  .block-head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; margin-bottom: 40px; }
+  .block-head h2 { font-weight: 800; font-stretch: 118%; font-size: clamp(30px, 4.6vw, 52px); line-height: 1; letter-spacing: -0.02em; }
+  .block-head p { color: var(--ink-soft); max-width: 40em; }
+
+  /* Projects */
+  .project { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); gap: clamp(24px, 4vw, 56px); padding: 36px 0; border-top: 1px solid var(--rule); }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  .project h3 { font-weight: 750; font-stretch: 108%; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.15; }
+  .project .meta { color: var(--ink-soft); font-size: 15px; margin-top: 6px; }
+  .project ul { margin-top: 18px; padding-left: 1.1em; max-width: 38em; }
+  .project li { margin-bottom: 8px; }
+  .project li::marker { color: var(--green); }
+  .ledger { border: 2px solid var(--ink); background: var(--surface); align-self: start; }
+  .ledger caption { text-align: left; font-weight: 700; font-size: 15px; padding: 12px 16px; border-bottom: 2px solid var(--ink); caption-side: top; background: var(--surface); border: 2px solid var(--ink); border-bottom: 0; }
+  table.ledger { width: 100%; border-collapse: collapse; }
+  .ledger td { padding: 12px 16px; border-top: 1px solid var(--rule); vertical-align: baseline; font-size: 15.5px; }
+  .ledger tr:first-child td { border-top: 0; }
+  .ledger td.fig { text-align: right; font-weight: 800; font-stretch: 112%; font-size: 22px; font-variant-numeric: tabular-nums; color: var(--green); white-space: nowrap; }
+  .tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .tools span { font-size: 13.5px; padding: 4px 10px; border: 1px solid var(--rule); border-radius: 3px; color: var(--ink-soft); }
+
+  /* Experience */
+  .role { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 5fr); gap: clamp(16px, 4vw, 56px); padding: 28px 0; border-top: 1px solid var(--rule); }
+  .role:first-of-type { border-top: 0; padding-top: 0; }
+  .role .when { color: var(--ink-soft); font-size: 15px; }
+  .role h3 { font-weight: 750; font-size: 21px; line-height: 1.2; }
+  .role .title { color: var(--ink-soft); margin-top: 2px; }
+  .role ul { margin-top: 12px; padding-left: 1.1em; max-width: 40em; }
+  .role li { margin-bottom: 7px; }
+  .role li::marker { color: var(--blue); }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; }
+  .skills h3 { font-weight: 750; font-size: 18px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); margin-bottom: 12px; }
+  .skills ul { list-style: none; }
+  .skills li { padding: 6px 0; border-bottom: 1px solid var(--rule); font-size: 15.5px; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr); gap: clamp(28px, 5vw, 64px); }
+  .about h3 { font-weight: 750; font-stretch: 108%; font-size: clamp(22px, 2.6vw, 28px); line-height: 1.15; }
+  .about .meta { color: var(--ink-soft); font-size: 15px; margin-top: 6px; }
+  .about p { margin-top: 16px; max-width: 36em; }
+  .about ul.art { margin-top: 16px; padding-left: 1.1em; max-width: 36em; }
+  .about ul.art li { margin-bottom: 8px; }
+  .about ul.art li::marker { color: var(--blue); }
+  .facts { list-style: none; border-top: 2px solid var(--ink); align-self: start; }
+  .facts li { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); font-size: 15.5px; }
+  .facts b { font-weight: 700; }
+  .swatch { display: inline-block; width: 0.9em; height: 0.9em; background: var(--blue); border-radius: 2px; vertical-align: -0.1em; margin-right: 6px; }
+  @media (max-width: 760px) { .about { grid-template-columns: minmax(0, 1fr); } .facts li { grid-template-columns: 8em minmax(0, 1fr); } }
+
+  /* Contact */
+  .contact h2 { font-weight: 850; font-stretch: 125%; font-size: clamp(36px, 7vw, 88px); line-height: 0.95; letter-spacing: -0.03em; }
+  .contact p { margin-top: 20px; color: var(--ink-soft); max-width: 34em; }
+  .contact .actions { margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .email { display: inline-block; margin-top: 28px; font-weight: 750; font-stretch: 108%; font-size: clamp(22px, 4vw, 40px); color: var(--blue); user-select: all; overflow-wrap: anywhere; }
+  footer { padding: 32px 0 48px; color: var(--ink-soft); font-size: 14px; border-top: 1px solid var(--rule); }
+
+  @media (max-width: 760px) {
+    .project, .role { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lane ol::before { animation: none; }
+    html { scroll-behavior: auto; }
+    .btn:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <a class="mark" href="#top">Aarna Pandey</a>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About me</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Aarna<br>Pandey</h1>
+      <p class="lede">Supply Chain Management and Finance student at the Gies College of Business, University of Illinois Urbana-Champaign. I build Excel models and dashboards that show where inventory, money and time are getting stuck.</p>
+      <div class="actions">
+        <a class="btn primary" href="resume.pdf">Download resume</a>
+        <a class="btn" href="#projects">See projects</a>
+      </div>
+
+      <div class="lane" aria-label="Where I have lived and studied">
+        <ol>
+          <li><div class="place">Mumbai</div><div class="note">Grew up here until age nine</div></li>
+          <li><div class="place">Moscow</div><div class="note">Six years, a new language and school system</div></li>
+          <li><div class="place">Dubai</div><div class="note">One year, learned to settle in fast</div></li>
+          <li><div class="place">Moscow</div><div class="note">Head Girl, co-founded Global Voice</div></li>
+          <li><div class="place">Champaign</div><div class="note">Gies College of Business, 3.95 GPA</div></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block" id="projects" aria-labelledby="projects-title">
+      <div class="block-head">
+        <h2 id="projects-title">Projects</h2>
+        <p>Planning, valuation and analytics work, mostly in Excel, with some Python.</p>
+      </div>
+
+      <article class="project">
+        <div>
+          <h3>Luxury Goods Distribution Planning Dashboard</h3>
+          <div class="meta">Independent project, July 2026</div>
+          <ul>
+            <li>Engineered a formula-driven Excel model covering 14 Americas boutiques and 16 high jewelry and high watch SKUs, using synthetic data to mirror a luxury supply chain planning workflow.</li>
+            <li>Designed a rebalancing engine that flagged inventory trapped at zero-demand boutiques and recommended inter-boutique transfers to fill unmet client orders.</li>
+            <li>Consolidated inventory health, 33 open client orders, ETA accuracy and on-time delivery into a single headline dashboard built for non-technical stakeholders.</li>
+          </ul>
+          <div class="tools"><span>Excel</span><span>Inventory planning</span><span>KPI dashboard</span></div>
+        </div>
+        <table class="ledger">
+          <caption>Key figures</caption>
+          <tbody>
+            <tr><td>Inventory flagged as trapped</td><td class="fig">~$65M</td></tr>
+            <tr><td>Unmet client orders covered</td><td class="fig">$8M+</td></tr>
+            <tr><td>Transfers recommended</td><td class="fig">14</td></tr>
+            <tr><td>Live formulas</td><td class="fig">799</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>Green Brick Partners (NYSE: GRBK) Valuation</h3>
+          <div class="meta">FIN 390: Financial Modeling, April 2026</div>
+          <ul>
+            <li>Built a fully linked three-statement model in Excel, forecasting from revenue and margin drivers.</li>
+            <li>Derived an implied price target through EV/EBITDA valuation and ran sensitivity analysis across a 7.0x to 9.0x multiple range.</li>
+            <li>Continue to track the call against actual performance.</li>
+          </ul>
+          <div class="tools"><span>Excel</span><span>Three-statement model</span><span>EV/EBITDA</span></div>
+        </div>
+        <table class="ledger">
+          <caption>Key figures</caption>
+          <tbody>
+            <tr><td>Implied price target</td><td class="fig">$73.37</td></tr>
+            <tr><td>Multiple range tested</td><td class="fig">7.0x to 9.0x</td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3>S&amp;P 500 Sector Analysis</h3>
+          <div class="meta">Independent quantitative research, October to November 2025</div>
+          <ul>
+            <li>Built a Python pipeline (pandas, NumPy) running rolling statistical analysis on 500+ constituents, identifying mean-reverting sectors and segmenting companies with K-Means clustering.</li>
+            <li>Turned price data for 500+ companies into a correlation heatmap of the top 20 S&amp;P 500 stocks with Matplotlib and Seaborn.</li>
+          </ul>
+          <div class="tools"><span>Python</span><span>pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span></div>
+        </div>
+        <table class="ledger">
+          <caption>Key figures</caption>
+          <tbody>
+            <tr><td>Companies analyzed</td><td class="fig">500+</td></tr>
+            <tr><td>Mean-reverting sectors found</td><td class="fig">3</td></tr>
+            <tr><td>Clusters vs. benchmark in backtest</td><td class="fig">+12%</td></tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section class="block" id="experience" aria-labelledby="experience-title">
+      <div class="block-head">
+        <h2 id="experience-title">Experience and leadership</h2>
+      </div>
+
+      <div class="role">
+        <div class="when">August 2026 to present</div>
+        <div>
+          <h3>Gies College of Business</h3>
+          <div class="title">Business 101 Section Leader</div>
+          <ul>
+            <li>Lead weekly sections for 30+ first-year students, preparing them to pitch 5+ companies including IBM, Caterpillar and Medline.</li>
+            <li>Clean and consolidate section data in Excel, using XLOOKUP and INDEX/MATCH to join records and SUMIFS/COUNTIFS to track performance metrics.</li>
+            <li>Summarize trends with pivot tables and charts, applying conditional formatting to flag exceptions for follow-up with course faculty.</li>
+            <li>Facilitate discussions on business ethics and professional responsibility and serve as the communication channel between students and faculty.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="when">January 2026 to present</div>
+        <div>
+          <h3>The Disruption Lab at UIUC</h3>
+          <div class="title">Senior Analyst (previously Analyst)</div>
+          <ul>
+            <li>Co-launching a trading competition with Interactive Brokers, the first of its kind at Gies, as part of a 6-person team: setting goals and rules, designing participant onboarding and working with the Interactive Brokers corporate representative.</li>
+            <li>Drove 347 sign-ups, 71+ info night attendees and 97 Instagram followers by managing the competition’s brand, social media and onboarding.</li>
+            <li>Core member of a 5-person cross-functional team that delivered Gies College of Business’s first AI chatbot, now live in production.</li>
+            <li>Consolidated 30+ source documents into the chatbot’s knowledge base and turned feedback from 20+ pilot testers into weekly stakeholder briefings that drove 3 product changes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="when">August 2025 to present</div>
+        <div>
+          <h3>Gies Ambassadors</h3>
+          <div class="title">Group Lead</div>
+          <ul>
+            <li>Lead a 5-person team representing the college to prospective and incoming students; planned and pitched a welcome event reaching 800+ first-year students.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="when">August 2024 to June 2025</div>
+        <div>
+          <h3>International School of Moscow</h3>
+          <div class="title">Head Girl; Co-Founder and Editor, Global Voice</div>
+          <ul>
+            <li>Elected by a 600+ student body to the school’s highest student leadership position, serving as sole student liaison to faculty and administration.</li>
+            <li>Reached readers in 17 countries across 4+ editions by co-founding Global Voice, an international student newspaper.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="skills" aria-labelledby="skills-title">
+      <div class="block-head">
+        <h2 id="skills-title">Skills and credentials</h2>
+      </div>
+      <div class="skills">
+        <div>
+          <h3>Excel</h3>
+          <ul>
+            <li>Pivot tables</li>
+            <li>XLOOKUP and INDEX/MATCH</li>
+            <li>SUMIFS and COUNTIFS</li>
+            <li>Conditional formatting and charts</li>
+            <li>Three-statement modeling</li>
+            <li>Dashboards</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Analytics</h3>
+          <ul>
+            <li>Python (pandas, NumPy)</li>
+            <li>SQL</li>
+            <li>KPI dashboards and data visualization</li>
+            <li>Forecasting and driver analysis</li>
+            <li>K-Means segmentation</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Credentials</h3>
+          <ul>
+            <li>Bloomberg Market Concepts (BMC)</li>
+            <li>Bloomberg Finance Fundamentals</li>
+            <li>Published research on Moscow’s art market, International Journal of Social Science Research and Review</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Languages</h3>
+          <ul>
+            <li>English</li>
+            <li>Hindi</li>
+            <li>Bengali</li>
+            <li>Russian</li>
+            <li>Spanish</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="about" aria-labelledby="about-title">
+      <div class="block-head">
+        <h2 id="about-title">About me</h2>
+        <p>The parts that don’t fit on a resume.</p>
+      </div>
+      <div class="about">
+        <div>
+          <h3>I’m also an artist</h3>
+          <div class="meta">“Artificial Intelligence” art exhibitions, Moscow, March 2024 and March 2025</div>
+          <p>Before I was building inventory models, I was painting. I conceived, curated and painted the work for two independent exhibitions exploring artificial intelligence, and I handled everything around them too.</p>
+          <ul class="art">
+            <li>Painted 12+ original works and drew 50+ attendees across the two shows.</li>
+            <li>Designed all the print materials myself, including the exhibition poster and promotional cards.</li>
+            <li>Gave an on-camera interview to a national TV news outlet and spoke about the exhibition on the Vartalap podcast, which reached 200+ listeners.</li>
+          </ul>
+          <p>Curating a show taught me something I use in supply chain work every day: the beautiful part only happens if the logistics behind it are right.</p>
+        </div>
+        <ul class="facts" aria-label="Quick facts">
+          <li><b>Favorite color</b><span><span class="swatch" aria-hidden="true"></span>Blue, which is why this site is too</span></li>
+          <li><b>Home bases</b><span>Mumbai, Moscow, Dubai and now Champaign</span></li>
+          <li><b>Languages</b><span>English, Hindi, Bengali, Russian and Spanish</span></li>
+          <li><b>Plays</b><span>Bass guitar</span></li>
+          <li><b>Childhood hero</b><span>Sherlock Holmes. I read every book.</span></li>
+          <li><b>Off the clock</b><span>Reading, movies and art museums</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block contact" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Let’s talk</h2>
+      <p>I am looking for supply chain and finance internships for Summer 2027. The fastest way to reach me is email.</p>
+      <div class="email">aarnapan11@gmail.com</div>
+      <div class="actions">
+        <a class="btn primary" href="https://www.linkedin.com/in/aarna-pandey" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="resume.pdf">Download resume</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Aarna Pandey, Champaign, IL</footer>
+</div>
+</body>
+</html>
